@@ -5,6 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
 .todo-container {
@@ -26,10 +27,14 @@ h1 {
   margin-bottom: 20px;
 }
 
-input[type="text"] {
-  flex: 1;
+input[type="text"],
+select {
   padding: 10px;
   font-size: 16px;
+}
+
+input[type="text"] {
+  flex: 1;
 }
 
 button {
@@ -75,4 +80,48 @@ li.completed {
   padding: 5px 10px;
   font-size: 14px;
   border-radius: 3px;
+}
+
+.priority {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: white;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.priority.low {
+  background-color: #6c757d;
+}
+
+.priority.medium {
+  background-color: #007bff;
+}
+
+.priority.high {
+  background-color: #dc3545;
+}
+
+/* Mobile Responsive */
+@media (max-width: 500px) {
+  .todo-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .input-section {
+    flex-direction: column;
+  }
+
+  .input-section input,
+  .input-section select,
+  .input-section button {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: row;
+    gap: 5px;
+  }
 }
